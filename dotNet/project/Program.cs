@@ -52,20 +52,24 @@ namespace project
 
     public class PuzzleData
 	{
-        public int Rows { get; }
-        public int Cols { get; }
-        public char[][] Puzzle { get; }
-        public char[][] Solution { get; }
+        public int Rows;
+        public int Cols;
+        public char[][] Puzzle; // This shouldn't be jagged...
+        public char[][] Solution;
 
-		public PuzzleData((int, int) dim, string puzzle, string solution)
+
+		public PuzzleData((int rows, int cols) dim, string puzzle, string solution)
         {
-            Rows = dim.Item1;
-            Cols = dim.Item2;
+            Rows = dim.rows;
+            Cols = dim.cols;
             Puzzle = StringTo2DChar(puzzle, Rows);
             Solution = StringTo2DChar(solution, Rows);
             PrintBoard(Puzzle);
             PrintBoard(Solution);
         }
+
+        /* Can add a operator method. To do comparisons between puzzles. Can flatten then do the conversion
+         */
 
         public string Flatten()
         {
@@ -89,12 +93,11 @@ namespace project
             }
         }
 
-        static public char[][] StringTo2DChar(string toConvert, int rows)
-        {
-            char[] temp = toConvert.ToArray<char>();
-            return temp.Select((s, i) => new { Value = s, Index = i})
+        static public char[][] StringTo2DChar(string toConvert, int rows) => 
+            toConvert.ToArray<char>()
+                .Select((s, i) => new { Value = s, Index = i})
                 .GroupBy(x => x.Index / rows)
-                .Select(grp => grp.Select(x => x.Value).ToArray<char>()).ToArray();
-        }
+                .Select(grp => grp.Select(x => x.Value).ToArray<char>())
+                .ToArray();
     }
 }

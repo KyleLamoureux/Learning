@@ -12,3 +12,4 @@ Haven't worked with this stuff since highschool, lots to learn.
 - https://docs.microsoft.com/en-ca/dotnet/core/tutorials/debugging-with-visual-studio-code -> Should finish this once I'm intro'd to the language
 - https://www.youtube.com/watch?v=GhQdlIFylQ8 -> Skimmed through this to get familiar with basic syntax
 - https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/ -> Get a more complete understanding of everything c#
+- https://www.educba.com/c-sharp-list-vs-array/ -> List vs Array's
