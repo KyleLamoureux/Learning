@@ -131,3 +131,23 @@ public async Task<int> RetrieveDocsHomePage()
     return content.Length;
 }
 ```
+
+## Fundamentals
+A **class or record** is a reference type. When an object of the type is created, the variable to which the object is assigned holds only a reference to that memory. When the object reference is assigned to a new variable, the new variable refers to the original object.   
+
+A **struct** is a value type. When a struct is created, the variable to which the struct is assigned holds the struct's actual data. When the struct is assigned to a new variable, it's copied. Changes made to one copy don't affect the other copy. 
+
+In general:
+- **Classes** are used to model more complex behaviour, or data that is intended to be modified after a class object is created.
+- **Structs** are best suited for small data structures that contain primiarly data that isn't intended to be modified after the struct is created.
+- **Record** types are for large data structures that contain primiarly data that isn't intended to be modifed after the object is created.
+
+### Implicit types, anonymous types, and nullable value types
+You can implicitly type a local variable (but not class members) by using the `var` keyword.  
+
+It can be inconvenient to create a named tpye for simple sets of related values that you don't intend to store pass outside method boundaries. You can create *anonymous types* for this purpose.
+
+Ordinary value types can't have a value of **null**. However, you can create *nullable value* types by appending a `?` after the type. 
+- Especially useful when you're passing data to and from databases in which numeric values might be `null`.
+
+

@@ -1,13 +1,21 @@
 using System;
 using System.Linq;
-
+using System.Collections.Generic;
 
 namespace project
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
+
+            if (args.Length == 0)
+            {
+
+                // return 1;
+            }
+            
+
             string path = ".\\12walls.txt";
             // = System.IO.File.ReadLine(path);
             string[] lines = System.IO.File.ReadAllLines(path);
