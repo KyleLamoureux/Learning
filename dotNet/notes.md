@@ -150,4 +150,4 @@ It can be inconvenient to create a named tpye for simple sets of related values 
 Ordinary value types can't have a value of **null**. However, you can create *nullable value* types by appending a `?` after the type. 
 - Especially useful when you're passing data to and from databases in which numeric values might be `null`.
 
-
+## Language Integrated Query (LINQ)
